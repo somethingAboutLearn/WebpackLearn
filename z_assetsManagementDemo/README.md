@@ -181,3 +181,81 @@
 - `npx webpack` 生成 `dist` 目录
 
 - `google-chrome index.html` 查看页面样式是否生效
+
+### 加载 `xml` , '.csv' 文件
+
+- 安装依赖
+
+  ```dos?linenums
+  npm install --save-dev xml-loader csv-loader
+  ```
+
+  注意 `csv-loader` 可能需要依赖 `npm i papaparse --save-dev`
+
+- 配置 `webpack.config.js`
+
+  ```javascript?linenums
+  const path = require('path')
+
+  module.exports = {
+    entry: './src/index.js',
+    output: {
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: 'dist/'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: ['file-loader']
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: ['file-loader']
+        },
+        {
+          test: /\.xml$/,
+          use: ['xml-loader']
+        },
+        {
+          test: /\.(csv|tsv)$/,
+          use: ['csv-loader']
+        }
+      ]
+    }
+  }
+  ```
+
+- 建立文件 `assets/data.xml` 和 `assets/database.csv`
+
+- `import` 引入 `.xml` 和 `.csv` 文件
+
+  ```javascript?linenums
+  import database from './assets/database.csv'
+  import data from './assets/data.xml'
+
+  window.onload = function() {
+    // 加载 xml 文件
+    const xmlEl = document.getElementById('xml'),
+      sectionEl = document.createElement('section')
+    sectionEl.innerText = JSON.stringify(data)
+    xmlEl.appendChild(sectionEl)
+    console.log(data)
+
+    // 加载 csv
+    const csvEl = document.getElementById('csv'),
+      sectionEl1 = document.createElement('section')
+    sectionEl1.innerText = JSON.stringify(database)
+    csvEl.appendChild(sectionEl1)
+    console.log(database)
+  }
+  ```
+
+- `npx webpack` 生成 `dist` 目录
+
+- `google-chrome index.html` 查看页面样式是否生效

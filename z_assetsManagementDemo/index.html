@@ -9,11 +9,101 @@
   </head>
   <body>
     <article>
-      <header>加载静态资源</header>
+      <header>加载 css</header>
+      <section>
+        <pre>
+          <code>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              color: #3eaf7c;
+            }
+          </code>
+        </pre>
+      </section>
+    </article>
+    <article id="image">
+      <header>加载图片</header>
       <section id="my-icon">
-        <div class="main">
-          <h2>加载字体</h2>
-        </div>
+        <pre>
+          <code>
+            #my-icon {
+              width: 200px;
+              height: 200px;
+              background-image: url('ball.svg');
+              background-size: 100%;
+              background-repeat: no-repeat;
+            }
+          </code>
+        </pre>
+        <pre>
+          <code>
+            import ballIcon from './assets/ball.svg'
+
+            window.onload = function() {
+              const imgEl = document.createElement('img'),
+                imageEl = document.getElementById('image')
+              imgEl.src = ballIcon
+              imageEl.appendChild(imgEl)
+            }
+          </code>
+        </pre>
+      </section>
+    </article>
+    <article>
+      <header>加载字体</header>
+      <section>
+        <pre>
+          <code id="font">
+            @font-face {
+              font-family: '淘气马丁学拼音装饰';
+              src: url('淘气马丁学拼音装饰.ttf');
+            }
+
+            .main {
+              font-family: '淘气马丁学拼音装饰';
+            }
+          </code>
+        </pre>
+      </section>
+    </article>
+    <article id="xml">
+      <header>加载 xml</header>
+      <section>
+        <pre>
+          <code>
+            import data from './assets/data.xml'
+            window.onload = function() {
+              // 加载 xml 文件
+              const xmlEl = document.getElementById('xml'),
+                sectionEl = document.createElement('section')
+              sectionEl.innerText = JSON.stringify(data)
+              xmlEl.appendChild(sectionEl)
+              console.log(data)
+            }
+          </code>
+        </pre>
+      </section>
+    </article>
+    <article id="csv">
+      <header>加载 csv</header>
+      <section>
+        <pre>
+          <code>
+            import database from './assets/database.csv'
+
+            window.onload = function() {
+
+              // 加载 csv
+              const csvEl = document.getElementById('csv'),
+                sectionEl1 = document.createElement('section')
+              sectionEl1.innerText = JSON.stringify(database)
+              csvEl.appendChild(sectionEl1)
+              console.log(database)
+            }
+          </code>
+        </pre>
       </section>
     </article>
   </body>
