@@ -182,7 +182,7 @@
 
 - `google-chrome index.html` 查看页面样式是否生效
 
-### 加载 `xml` , '.csv' 文件
+### 加载 `xml` , `.csv` 文件
 
 - 安装依赖
 
