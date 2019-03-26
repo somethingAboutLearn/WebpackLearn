@@ -1,0 +1,18 @@
+@import 'base.css';
+
+#my-icon {
+  width: 200px;
+  height: 200px;
+  background-image: url('ball.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: '淘气马丁学拼音装饰';
+  src: url('淘气马丁学拼音装饰.ttf');
+}
+
+.main {
+  font-family: '淘气马丁学拼音装饰';
+}
