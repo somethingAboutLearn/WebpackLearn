@@ -93,7 +93,7 @@
   npm install --save-dev clean-webpack-plugin
   ```
 
-- 配置 `webpack.config.js`
+- 配置 `webpack.config.js`，注意 `new CleanWepackPlugin()` 接收的是个对象 `{}`，而不是数组 `[]`
 
   ```javascript?linenums
   const path = require('path')
@@ -130,3 +130,5 @@
     }
   }
   ```
+
+- 修改 `src` 下的任意文件，重新执行 `npx webpack` ，看 `dist` 目录下是否先清空再生成新文件
