@@ -15,6 +15,13 @@
 
 ## 用法
 
+- `npm` 初始化，安装 webpack 和 webpack-cli
+
+```dos?linenums
+npm init -y
+npm install webpack webpack-cli --save-dev
+```
+
 - 将 `./src/index.js` 作为入口文件
 - 将 `./src/bar.js` 模块在 `./src/index.js` 中引入， `document.write()` `bar` 模块的内容
 - 执行 `npx webpack` 命令，生成 `dist` 目录及输出文件 `bundle.js`
