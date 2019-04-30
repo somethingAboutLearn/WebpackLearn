@@ -1,4 +1,4 @@
-# output management
+# development
 
 ## 目录结构
 
@@ -18,7 +18,7 @@
   |- bar.js
   |- helloWorld.js
   |- main.js    // 脚本入口
-|- package.json    // npm 包管理器， 执行 `npx webpack` ，将 `"main": "index.js"` 将 `src/index.js` 作为入口点，生成 `dist/main.js`
+|- package.json    // npm 包管理器
 |- README.md
 |- webpack.config.js    // 配置打包件
 ```
