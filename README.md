@@ -80,3 +80,14 @@ npm install webpack webpack-cli --save-dev
 - `import default from './[name].js'` 与 `import('./[name].js')` 的区别，前者静态引入，后者按需引入。
 
 </details>
+
+### [z_cachingDemo](https://github.com/somethingAboutLearn/WebpackLearn/tree/master/z_cachingDemo) 缓存
+
+<details>
+
+<summary>点击展开查看</summary>
+
+- 利用浏览器的缓存机制，减少请求次数
+- 利用 hash 随机字符串作为文件的名称，实现非覆盖更新
+
+</details>

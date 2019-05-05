@@ -2,6 +2,26 @@
 
 ## 目录结构
 
+```dos?linenums
+|- /dist    // `npx webpack` 命令执行后生成的生产环境的代码文件
+  |- index.html
+  |- main.[hash].js
+  |- runtime.[hash].js
+  |- vendors.[hash].js    // 轻易不改变的块
+|- /node_modules    // 依赖模块文件夹
+|- /public    // 静态资源
+  |- index.html   // 单页面入口
+|- /src     // 开发环境的源代码文件
+  |- A.js
+  |- index.js
+  |- J.js
+  |- K.js
+  |- Q.js
+|- package.json    // npm 包管理器
+|- README.md
+|- webpack.config.js    // 配置打包件
+```
+
 ## 用法
 
 ### 准备工作
